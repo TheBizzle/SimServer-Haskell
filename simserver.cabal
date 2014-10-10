@@ -1,0 +1,45 @@
+Name:                simserver
+Version:             0.1
+Cabal-version:       >=1.16.0
+License:             BSD3
+License-File:        LICENSE.txt
+Author:              Jason Bertsche
+Maintainer:          jason.bertsche@gmail.com
+Homepage:            http://github.com/TheBizzle
+Category:            Web
+Synopsis:            A NetLogo distribution/utility platform
+Description:         A NetLogo distribution/utility platform
+Stability:           Experimental
+Build-type:          Simple
+
+source-repository head
+  type:     git
+  location: git@github.com:TheBizzle/SimServer-Haskell.git
+
+Executable simserver
+  hs-source-dirs: src
+  main-is: Main.hs
+  default-language: Haskell2010
+  GHC-Options:
+    -Wall
+    -fno-warn-name-shadowing
+    -threaded
+    -funbox-strict-fields
+    -O2
+  Build-depends:
+    base                      >= 4     && < 5,
+    bytestring                >= 0.9.1 && < 0.11,
+    MonadCatchIO-transformers >= 0.2.1 && < 0.4,
+    mtl                       >= 2     && < 3,
+    snap-core                 >= 0.9   && < 0.10,
+    snap-server               >= 0.9   && < 0.10
+
+test-suite tests
+  type:             exitcode-stdio-1.0
+  main-is:          Main.hs
+  hs-source-dirs:   test
+  default-language: Haskell2010
+  build-depends:
+    HUnit                      >= 1.2,
+    test-framework             >= 0.8,
+    test-framework-hunit       >= 0.3

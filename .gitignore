@@ -1,0 +1,9 @@
+*.exe
+*.dll
+*.hi
+*.o
+
+/.ghci
+/.projections.json
+/dist
+/log
