@@ -1,9 +1,12 @@
-*.exe
 *.dll
+*.exe
 *.hi
+*.iml
 *.o
 
 /.ghci
+/.idea
 /.projections.json
+
 /dist
 /log
